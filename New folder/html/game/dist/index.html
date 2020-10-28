@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> click target explosives gif test</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Tim Tesner - early 2017 -->
+<!-- revisit and edits - early 2018 -->
+<!-- 2019 - March - added some new images and audio 
+fixed bonus sound bug - now just have to fix error of bonus perfect bonus sound with 1 missed shot instead of no misses-->
+<!-- April 21st, 2020 - added 8 new animated ships -->
+
+<!-- Aim / Click / Shoot - mouse and {W A S D} keys -->
+
+<!-- X and C keys- zoom in/out - Limited to edge of picture then freezes as a feature still unfinished - refresh page to try zoom in/zoom out again - Try killing an enemy while zooming, and see everything respond to the zoom -->
+
+<!-- Everything is produced in combinations Randomly so try refreshing multiple times -->
+
+<!-- It became a work of Art to combine all of this into a working game from the start of testing a coding idea and expanding on it-->
+
+<!-- Audio Format = mp3 -->
+
+<!-- multiple explosion gifs, overlay cockpit backgrounds, ships, explosion sounds by random with display timers, greeting audio, background audio -->
+
+<!-- Had the idea to try out a few coding ideas which turned into a fun bunch of code -->
+
+<!-- Check Console for more info -->
+
+<!-- Images, and Audio are all harvested/linked from various found files all across the internet - Thanks to the Artists -->
+
+<!-- The layers of this code work together for nice effect, and fun.
+
+audio clips
+explosions gifs
+spaceships gifs
+cockpits png
+bullets/shots 
+ghost div
+ghost ship overlay
+move background image
+zoom_in - limited - refresh to reset
+zoom_out - once to edge of frame of pic - then frozen to not go off the background
+added mulitple polyphony audio - can click the same sound overtop of same sound without restarting (firing shots).
+
+randomness - refresh/try many games to get full effect of randomness combinations
+
+marquee tag imitation - thanks internet code I found - *needs work
+
+image transparency - zero opacity
+onclicks
+css display:none - to get rid of loop of gifs
+timers, and resets
+creating, and destroying elements dynamically
+zIndex of images to create layers that overlap and transparency shows through
+hidden audio tags
+css cursor:crosshair
+bullets themselves are a gif
+bullets disappear with a timer
+bullets fade in opacity
+bullets visually shrink into the distance
+bullets expand upon impact
+centering the middle of the explosion gif/pic onto cursor location of ship hit
+Audio elements that no have loop, or autoplay.
+Randomly bringing a bunch of images I randomly found/harvested from the internet.
+Play Background Greeting Audio's once, and destroy function. This simulates autoplay on android/phone, whereas on the audio element autoplay=true works on desktop chrome browser.
+console score
+enemy hp
+bonus sounds - current bug - sounds play on one missed shot, instead of perfect shots/hits of a ship to explosion.
+
+-->
+
+<!-- under construction :
+flying controls - press {w a s d} keys after clicking on page to focus()
+
+* - Was a black background until it was switched for a space picture background, making some explosion gifs have black backgrounds. The gifs used to look like real explosions with a matching black background.  If only I could get all transparent gifs for the explosions as well as the ships.
+-->
+
+<!-- Progress Blog
+
+Added controls based on moving cockpit image, was trying to move ship and redraw ship img, but decided to move background instead, which leaves background showing outside edges once moved.. -->
+
+<!-- Added score and hit points -->
+
+<!-- ...and maybe some more undocumented code -->
+
+<!-- To do list - Adjust the gif placement of each individual explosion img by making it set from within the random array/object list, and make the explosion appear more directly on center of ship/target using css margins/paddings, or absolute positioning etc -- if each gif/pic explosion you use is centered, then you wouldn't need this future feature similar to how the explosion ends on each gif custom so it doesn't loop -->
+
+<!-- Captains Log - stardate 4/2/17 - After trying to solve the problem of being able to click/target ship when it was zIndexed underneath of the transparent cockpit for layers...(you could see it through the partially transparent cockpit image, but couldn't click it... I had a clever idea to build a ghost overlay ship with zero opacity that would double overtop of original ship position. Because of the visual effect of having the cockpit image at a higher zIndex than the ship, the ship will be behind it, and wouldn't allow an onclick..because you would be really clicking on the background cockpit image without the ghost ship that is at zIndex of 5, and ship is at zIndex 1.  Also tried to calculate ship remove based on offsetWidth/offsetHeight, and event.clientX/event.clientY etc but figured this is much better. Overlay ghost ship is opacity zero, and its zIndex is 5, which makes it one above background image enabling onclick. Also added a necessary div to contain the ghost overlay ship to work properly with the idea of flying away from the ship - One of the coolest things in the whole codebase of this is the ghost overlay and ghost div overlay idea-->
+
+<!-- Added fading shots - fades the shot opacity and size, and lines up with crosshairs still -->
+
+<!-- Added code to move fired visible shots from cursor location while flying-->
+
+
+<!-- BUGS/Fix/WIP
+
+Sometimes there is a secondary explosion gif/image instead of just one, not letting the original image finish.
+
+2 - I might be editing/working on this pen if you see it, or see errors, so refresh or check back maybe.
+-->
+
+<!-- This is getting fun -->
+
+<!-- To DO list - 4/5/2017 ---
+
+Add diagonal movement.
+Movement of ships need to be some formulas more, not just css controlled animated floating gifs / marquee movement simulation.
+
+Enemies need to not just be sitting ducks when you aim at them.
+
+Enemies need to be generated with random strengths/weaknesses/speed/abilites, so sometimes they are faster or slower when generated etc.
+
+Make movement smoother using multiple keypresses in combination.  Movement is a bit stuttery using just WASD keys so far. Need lite movement drifting as you normally would in space with thrusters.
+
+Rewrite Code to use less code and share components more.
+
+Insert some code libraries - $/jQuery etc - trying to shorten code later
+
+Maybe make this fully into Javascript for demonstration purposes.
+
+Add more bullets types.
+
+Finish Zoom_out function -- X key - buggy, lets you see outside background border.
+
+Add Barrel Roll by spinning the background space_view at a center point that must be the center of cockpit screen etc.
+Add light Barrel Roll for right/left turns.
+
+Need panorama type backgrounds so they can connect as rotation happens, so the borders feel limitless.
+
+Add enemy ship powerbar/Revise 1 shot kill to an option, or powerbar type.
+Add score/high score/game timers.
+Add more explosion sounds.
+Add more firing sounds.
+Add Targeted Ship Classification.
+Add tracking device weapon for remote detonation by using the explosion function later than 1st onclick.
+Add weapon banks keys 1-7.
+Add sound effects to each action.
+-DONE-Add functionality that will Shrink the enemy and explosions still onscreen as you zoom out, or vice versa on zoom_in to a point so they don't get too close to screen
+Insert Enemies into Zoomed playing field, or to zoomed outer area.
+Add enemy flight paths
+Add enemies into random points on screen so you have to sorta hunt for them.
+Maybe Limit mouse movement to a zone, and that is different in each ship cockpit your in, so you have to fly/move more to target instead of streaking your mouse over to the target each time.
+Add speed burst travel with shift key, or lock in speed burst with caps lock key.
+Add spacebar firing, as an option to mouse click, or as another usable weapon or function.
+utilize mouse scroll wheel.
+Make controls for Phones/Mobile devices that have device orientation tilt/gyro functionality 
+
+2018 - Additions - 
+
+- Added triple polyphony hit sounds
+- Added more enemy ship gifs
+
+-->
+<!-- partial -->
+  <script src='https://hammerjs.github.io/dist/hammer.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

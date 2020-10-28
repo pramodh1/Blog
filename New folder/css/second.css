@@ -1,0 +1,144 @@
+*{
+margin: 0px;
+padding: 0px;
+text-decoration: none;
+list-style: none;
+box-sizing: border-box;
+}
+body{
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     background: url(hell.jpg) no-repeat;
+     
+    background-size: cover;
+
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+nav{
+    background: cadetblue;
+    height: 60px;
+    width: 100%;
+}
+label{
+    color: white;
+    font-size: 30px;
+    line-height: 50px;
+    padding-left: 50px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 70px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0px 20px;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+}
+nav ul li a{
+    color: white;
+}
+.checkbtn{
+    font-size: 30px;
+    line-height: 55px;
+    float: right;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+a:hover,a.active{
+    background: none;
+    color: #0082e6;
+
+}
+#article{
+    
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+}
+ article img{
+    
+    width: 100%;
+    background-size: cover;
+
+
+
+}
+article{
+    max-width: 30%;
+    display: inline-block;
+    border: 1px solid black;
+    margin-left: 5px;
+}
+
+
+
+@media (max-width:952px)
+{
+    label.logo{
+        font-size: 29px;
+        padding-left: 10px;
+
+    }
+}
+@media (max-width:650px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+background: rosybrown;
+
+left: -100%;
+text-align: center;
+transition: all .5s;
+
+    }
+    nav ul li
+    {
+        display: block;
+    }
+    a:hover,a.active{
+        background: none;
+        color: #0082e6;
+
+    }
+    #check:checked ~ul{
+        left: 0     ;
+    }
+
+}

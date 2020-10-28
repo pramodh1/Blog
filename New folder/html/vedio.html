@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            background: #ddd;
+        }
+
+        .video-button,
+        .video-container {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            --video-width: 80vw;
+            width: var(--video-width);
+            height: calc(var(--video-width) / 1.77);
+        }
+
+        .video-button {
+            cursor: pointer;
+            clip-path: polygon(30% 20%, 70% 20%, 70% 80%, 30% 80%);
+            transition: 0.6s cubic-bezier(0.6, 0, 0.4, 1);
+        }
+
+        .video-button[data-aperture="open"] {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .video-container {
+            overflow: hidden;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/502545/2018-06-01_08-51-13.png);
+
+
+        }
+
+        .actual-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.6s linear;
+            transform: scale(1);
+
+        }
+
+        [data-aperture="open"] .actual-video {
+            transform: scale(1.2);
+        }
+
+        .play-button__aperture--left {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            transition: 0.5s 0.1s cubic-bezier(0.6, 0, 0.4, 1);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0% 0%, 40% 0%, 40% 100%, 0% 100%);
+        }
+
+        [data-aperture="open"] .play-button__aperture--left {
+            transition-delay: 0s;
+        }
+
+        [data-aperture="open"] .play-button__aperture--left {
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        }
+
+        .play-button__aperture--top-right {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            transition: 0.5s 0.1s cubic-bezier(0.6, 0, 0.4, 1);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 80%);
+        }
+
+        [data-aperture="open"] .play-button__aperture--top-right {
+            transition-delay: 0s;
+        }
+
+        [data-aperture="open"] .play-button__aperture--top-right {
+            clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
+        }
+
+        .play-button__aperture--bottom-right {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            transition: 0.5s 0.1s cubic-bezier(0.6, 0, 0.4, 1);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0% 100%, 100% 100%, 100% 20%);
+        }
+
+        [data-aperture="open"] .play-button__aperture--bottom-right {
+            transition-delay: 0s;
+        }
+
+        [data-aperture="open"] .play-button__aperture--bottom-right {
+            clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="video-button" data-aperture="closed">
+        <div class="video-container">
+            <video class="actual-video" src="vedio.mp4" type="vedio/mp4">
+            </video>
+            <div class="play-button__aperture--left"></div>
+            <div class="play-button__aperture--top-right"></div>
+            <div class="play-button__aperture--bottom-right"></div>
+        </div>
+    </div>
+    <script>
+        // console.clear();
+
+        var videoEl = document.querySelector('video');
+        document.querySelector('.video-button').addEventListener('click',
+            function () {
+                if (this.dataset.aperture === 'open') {
+                    this.dataset.aperture = 'closed';
+                    videoEl.pause();
+                    videoEl.progress = 0;
+                } else {
+                    this.dataset.aperture = 'open';
+                    videoEl.play();
+                }
+            });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

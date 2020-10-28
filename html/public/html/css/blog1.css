@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+
+* {
+
+    box-sizing: border-box;
+}
+
+header,
+section {
+    overflow: hidden;
+}
+
+:root {
+    --single-font: 'Metal Mania', cursive;
+    --rubik: 'rubik', cursive;
+    --lobster: 'lobster', cursive;
+    --light-black: #2e2c2caf;
+    --bggradient: linear-gradient(to bottom, #dd2476, #ff512f);
+}
+
+header a {
+    font-family: var(--single-font);
+    font-size: 0.9em;
+    color: whitesmoke;
+}
+
+header {
+
+    background: #dd2476;
+    background: var(--bggradient);
+}
+
+.conatiner-fluid p-0 {
+    background: var(--bggradient);
+    background: #dd2476;
+}
+
+header .row .col-md-5 {
+    padding: 4.2vmin 1vmin;
+}
+
+header .row .col-md-7 {
+    padding: 22vmin 1vmin;
+    padding-bottom: 35vmin;
+    font-family: var(--rubik);
+    color: white;
+}
+
+header .container .col-md-7 h6 {
+    padding: 1vmin;
+    letter-spacing: 4px;
+    font-size: 20px;
+}
+
+header .container .col-md-7 h1 {
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+header .container .col-md-7 p {
+    padding: 1vmin;
+}
+
+header .container .col-md-7 button {
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.section-1 {
+    padding: 20vmin 0;
+}
+
+.section-1 .row .col-md-6 .pray img {
+
+    opacity: 0.8;
+    width: 80%;
+    border-radius: 0.2em;
+}
+
+.section-2 .cover {
+    width: 100%;
+    height: 45vmin;
+    background-position: -24rem --19rem;
+    background-size: 150%;
+    position: relative;
+}
+
+.section-2 .cover .content {
+    background: burlywood;
+
+    height: 100%;
+    width: 100%;
+    padding-top: 19vmin;
+}
+
+.cover .content>h1 {
+    font-family: var(--lobster);
+    font-size: 6vmin;
+    color: whitesmoke;
+}
+
+.cover .content>p {
+    font-family: var(--rubik);
+    font-size: 2vmin;
+    color: #e5e5e5;
+
+}
+
+.number .rect {
+    position: relative;
+    z-index: 1;
+    background: white;
+    width: 17rem;
+    height: 12rem;
+    padding-top: 3.5vmin;
+    margin: 1rem;
+    border-radius: 5em;
+    box-shadow: 1px 2px 50px 0px rgba(255, 0, 0, 0.349);
+
+}
+
+.number {
+    margin-top: -15vmin;
+}
+
+.number .rect h1 {
+    font-size: 3em;
+    color: turquoise;
+
+}
+
+.numbers .rect p {
+
+    font-family: var(--single-font);
+}
+
+
+
+
+
+.section-6 .cover {
+    width: 100%;
+    height: 45vmin;
+    background-position: -24rem --19rem;
+    background-size: 150%;
+    position: relative;
+}
+
+.section-6 .cover .content {
+    background: black;
+
+    height: 100%;
+    width: 100%;
+    padding-top: 19vmin;
+}
+
+.section-6 .cover .content>h1 {
+    font-family: var(--lobster);
+    font-size: 6vmin;
+    color: whitesmoke;
+}
+
+.section-6 .cover .content>p {
+    font-family: var(--rubik);
+    font-size: 2vmin;
+    color: #e5e5e5;
+
+}
+
+.section-6 .number .rect {
+    font-size: small;
+    position: relative;
+    z-index: 1;
+    background: white;
+    width: 17rem;
+    height: 12rem;
+    padding-top: 3.5vmin;
+    margin: 1rem;
+    border-radius: 5em;
+    box-shadow: 1px 2px 50px 0px rgba(178, 180, 28, 0.349);
+
+}
+
+.section-6 .number {
+    margin-top: -15vmin;
+}
+
+.section-6 .number .rect h1 {
+    font-size: 3em;
+    color: rgba(153, 86, 74, 0.74);
+
+}
+
+.section-6 .number .rect p {
+
+    font-family: var(--lobster);
+}
+
+
+.nonsence>h1 {
+    padding-top: 15vmin;
+    padding-bottom: 0.1em;
+    font-family: var(--lobster);
+
+}
+
+.nosence>p {
+
+    color: var(--light-black);
+    font-size: 3vmin;
+    padding-bottom: 10vmin;
+
+}
+
+.nonsence .cards .card {
+    width: 22rem;
+    margin: 3vmin;
+}
+
+.cards div {
+    padding: 0;
+    margin: 0;
+}
+
+.cards .title {
+    background: rgba(208, 241, 241, 0.1);
+    padding: 1.4rem 2.5rem;
+    font-size: 2vmin;
+}
+
+.card .card-text {
+    padding: 2.5rem 3rem;
+    color: var(--light-black);
+}
+
+.card-body .pricing {
+
+    background: rgba(208, 241, 241, 0.2);
+    border-top-left-radius: 170px;
+    border-top-right-radius: 170px;
+}
+
+.card-body .pricing>h1 {
+    font-size: 10vmin;
+    padding: 1em 0.5em;
+
+}
+
+.vedio {
+    height: 110vmin;
+    margin-top: 15vmin;
+    background: var(--bggradient);
+    font-family: var(--rubik);
+
+}
+
+.vedio .col-md-12>h1 {
+
+    padding: 2em 0 0.5em 0;
+    color: whitesmoke;
+    font-size: 6vmin;
+}
+
+.section-4 .container h1 {
+
+    font-size: 6vmin;
+    padding-top: 14vmin;
+
+    font-family: var(--single-font);
+}
+
+.section-4 .card-deck {
+    padding: 10vmin 4vmin;
+
+}
+
+.section-4 .card {
+    widows: 22rem;
+    margin-top: 10vmin;
+}
+
+.section-4 .card .card-text {
+    pad: 0.5em;
+}
+
+.section-4 .card .card-text>a {
+    font-size: 1.5em;
+}
+
+.border-radius1 {
+    border-radius: 340px;
+    width: 60%;
+
+}
+
+.border-radius2 {
+    border-radius: 340px;
+    width: 60%;
+
+}
+
+.border-radius {
+    border-radius: 340px;
+    width: 60%;
+
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.815);
+    overflow-x: hidden;
+    padding: 18vmin 22vmin;
+
+}
+
+footer p>span {
+    color: #ff512f;
+}
+
+footer input {
+    border: none lightpink;
+
+}
+
+footer input::placeholder {
+    color: white lightsalmon;
+}
+
+footer input-group-text {
+    background: var(--bggradient);
+    border: none;
+}
+
+footer .column i {
+    color: #b33c27;
+}
+
+footer .column i+i {
+    padding: 0 0.5em;
+
+}
+
+section7 {
+    background-color: rgb(160, 41, 207);
+}
